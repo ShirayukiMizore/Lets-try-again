@@ -18,7 +18,10 @@ import static Mizore.Utils.Refrences.VERSION;
 public class NoNameMod {
 
     @SidedProxy(clientSide = "Mizore.Client.ClientProxy", serverSide = "Mizore.Common.CommonProxy")
-    public CommonProxy proxy;
+    public static CommonProxy proxy;
+
+    @Mod.Instance()
+    public static NoNameMod instance;
 
     @Mod.EventHandler
     public void PreInit(FMLPreInitializationEvent event){proxy.PreInit(event);}
